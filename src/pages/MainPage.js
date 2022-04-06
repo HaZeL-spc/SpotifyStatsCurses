@@ -22,9 +22,7 @@ const offerDescription = {
     "You can search for a specific album and find out how many curses there are. It will be shown in graphs",
 };
 
-const MainPage = () => {
-  const [token, setToken] = useState("");
-
+const MainPage = ({ token, setToken }) => {
   const changeToken = () => {
     const hash = window.location.hash;
     let token = window.localStorage.getItem("token");
@@ -46,23 +44,21 @@ const MainPage = () => {
     setToken(token);
   };
 
-  //use it on logout
-  const deleteToken = () => {
-    setToken("");
-    window.localStorage.removeItem("token");
-  };
-
   useEffect(() => {
     //deleteToken();
-    let newArtists = getArtists(token);
-    console.log(newArtists);
+    //let newArtists = getArtists(token);
+    //console.log(newArtists);
     changeToken();
   }, [token]);
 
   return (
     <div className="main-page-container">
       <div className="opening-img-container">
-        <div className="opening-img">GET TO KNOW YOUR MUSIC BETTER</div>
+        <div className="opening-img">
+          GET TO KNOW YOUR MUSIC BETTER
+          {/* <h4> works in</h4> */}
+          {/* <Flags.PL title="Poland" className="countries-work" /> */}
+        </div>
       </div>
       <div className="offer-container">
         <h1 className="offer-header">WE OFFER YOU</h1>

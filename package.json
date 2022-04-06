@@ -8,14 +8,18 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.26.1",
     "cors": "^2.8.5",
+    "country-flag-icons": "^1.4.25",
     "genius-lyrics-api": "^3.2.0",
     "http-proxy-middleware": "^2.0.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
     "react-intersection-observer": "^8.33.1",
+    "react-router": "^6.3.0",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
     "react-spotify-api": "^3.0.0",
+    "sass": "^1.49.11",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

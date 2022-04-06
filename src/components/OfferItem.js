@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 
 const OfferItem = ({ Icon, classOffer, text, textDescription }) => {
   const [iconsSize, setIconsSize] = useState(200);
-  const ref = useRef();
+  const ref1 = useRef();
+  const refImages = useRef();
 
   const changeIconSize = (e) => {
     if (document.getElementsByTagName("body")[0].clientWidth > 1700) {
@@ -28,11 +29,12 @@ const OfferItem = ({ Icon, classOffer, text, textDescription }) => {
       ([entry]) => {
         if (entry.isIntersecting) {
           //do your actions here
-          ref.current.style.filter = "opacity(100%)";
+          ref1.current.style.filter = "opacity(100%)";
           setTimeout(() => {
-            ref.current.getElementsByClassName(
+            ref1.current.getElementsByClassName(
               "offer-description"
             )[0].style.filter = "opacity(100%)";
+            refImages.current.style.filter = "opacity(100%)";
           }, 1000);
         }
       },
@@ -42,8 +44,8 @@ const OfferItem = ({ Icon, classOffer, text, textDescription }) => {
         threshold: 0.8,
       }
     );
-    if (ref.current) {
-      observer.observe(ref.current);
+    if (ref1.current) {
+      observer.observe(ref1.current);
     }
   };
 
@@ -53,16 +55,24 @@ const OfferItem = ({ Icon, classOffer, text, textDescription }) => {
     return () => {
       window.removeEventListener("resize", changeIconSize);
     };
-  }, [ref]);
+  }, [ref1]);
 
   return (
-    <div className={classOffer} ref={ref}>
-      <div className="offer-element">
-        <Icon size={iconsSize} />
-        <h1 className="offer-header-item">{text}</h1>
+    <>
+      <div className={classOffer} ref={ref1}>
+        <div className="offer-element">
+          <Icon size={iconsSize} />
+          <h1 className="offer-header-item">{text}</h1>
+        </div>
+        <div className="offer-description">{textDescription}</div>
       </div>
-      <div className="offer-description">{textDescription}</div>
-    </div>
+      <div className={`${classOffer}` + "-photos"} ref={refImages}>
+        <div className="pic1"></div>
+        <div className="pic2"></div>
+        <div className="pic3"></div>
+        <div className="pic4"></div>
+      </div>
+    </>
   );
 };
 

@@ -15,12 +15,15 @@ html {
 .opening-img-container {
   width: 100%;
   height: 80vh;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .opening-img {
   height: 100%;
   
-  background-image: url("./green-background.png");
+  background-image: url("./photo/green-background.png");
   background-position: center;
   background-size: cover;
 
@@ -28,11 +31,18 @@ html {
   justify-content: center;
   align-items: center;
 
+
   font-family: 'Anton', sans-serif;
+
   color: white;
   font-size: 6em;
   text-align: center;
   text-shadow: 0px 0px 3px black;
+}
+
+.countries-work {
+  height: 20px;
+  width:30px;
 }
 
 .offer-container {
@@ -49,6 +59,7 @@ font-family: 'Varela Round', sans-serif;
   color: black;
   font-size: 4em;
   padding-bottom: 50px;
+  text-decoration: underline;
 }
 
 .offers-wrapper {
@@ -60,34 +71,112 @@ font-family: 'Varela Round', sans-serif;
   padding-bottom: 100px;
 }
 
-.first-offer {
-  grid-row: 1;
-  grid-column: 1;
-
+.first-offer, .second-offer, .third-offer {
   display: flex;
   justify-content: start;
   align-items: center;
   flex-direction: column;
+}
+
+.first-offer {
+  grid-row: 1;
+  grid-column: 1;
 }
 
 .second-offer {
   grid-row: 2;
   grid-column: 2;
-
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  flex-direction: column;
 }
 
 .third-offer {
   grid-row:3;
   grid-column: 1;
+}
 
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  flex-direction: column;
+.second-offer-photos, .third-offer-photos, .first-offer-photos {
+  position: relative;
+  filter: opacity(0%);
+  transition: all 1s ease-in
+}
+
+.first-offer-photos {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.second-offer-photos {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.third-offer-photos {
+  grid-row:3;
+  grid-column: 2;
+}
+
+.pic1, .pic2, .pic3, .pic4 {
+  position:absolute;
+  border-radius: 10px;
+  border: solid 2px;
+  filter: grayscale(20%);
+
+  height: 90px;
+  width: 90px;
+
+  background-position: center;
+  background-size: cover;
+}
+
+.first-offer-photos .pic1, .first-offer-photos .pic2, .first-offer-photos .pic3, .first-offer-photos .pic4 {
+  display: none;
+}
+
+.second-offer-photos .pic1 {
+  left: calc(100% - 120px);
+  top: 20px;
+  background-image: url("./photo/ArianaGrande.PNG");
+}
+
+.second-offer-photos .pic2 {
+  left: calc(100% - 100px);
+  top: 120px;
+  background-image: url("./photo/DawidPodsiadlo.PNG");
+}
+
+.second-offer-photos .pic3 {
+  left: calc(100% - 220px);
+  top: 20px;
+  background-image: url("./photo/DuaLipa.PNG");
+}
+
+.second-offer-photos .pic4 {
+  left: calc(100% - 200px);
+  top: 120px;
+  background-image: url("./photo/JustinBieber.PNG");
+}
+
+.third-offer-photos .pic1 {
+  left: 70px;
+  top: 20px;
+  background-image: url("./photo/=EdSheeran.PNG");
+}
+
+.third-offer-photos .pic2 {
+  left: 50px;
+  top: 120px;
+  background-image: url("./photo/Adele30.PNG");
+}
+
+.third-offer-photos .pic3 {
+  left: 170px;
+  top: 20px;
+  background-image: url("./photo/SourOliviaRodrigo.PNG");
+}
+
+.third-offer-photos .pic4 {
+  left: 150px;
+  top: 120px;
+  background-image: url("./photo/VoyageAbba.PNG");
 }
 
 
@@ -100,6 +189,7 @@ font-family: 'Varela Round', sans-serif;
 
   height: 90px;
   width: 90px;
+  filter: grayscale(20%);
 
   background-position: center;
   background-size: cover;
@@ -109,21 +199,21 @@ font-family: 'Varela Round', sans-serif;
   left:-120px;
   transform:rotate(330deg);
 
-  background-image: url("./wykres.PNG");
+  background-image: url("./photo/wykres.PNG");
 }
 
 .second-offer:before {
   left:calc(100% + 60px);
   transform:rotate(30deg);
 
-  background-image: url("./edSheeran.PNG");
+  background-image: url("./photo/edSheeran.PNG");
 }
 
 .third-offer:before {
   left:-120px;
   transform:rotate(330deg);
 
-  background-image: url("./album.PNG");
+  background-image: url("./photo/album.PNG");
 }
 
 
@@ -179,7 +269,7 @@ font-family: 'Varela Round', sans-serif;
 }
 
 @media (max-width: 1200px) {
-  .opening-img {
+  .opening-img{
     font-size: 5em;
   }
   .offers-wrapper {
@@ -196,6 +286,9 @@ font-family: 'Varela Round', sans-serif;
   .third-offer {
     grid-row: 3;
     grid-column: 1;
+  }
+  .first-offer-photos, .second-offer-photos, .third-offer-photos {
+    display: none;
   }
 }
 
@@ -225,14 +318,11 @@ font-family: 'Varela Round', sans-serif;
 }
 
 @media (max-width: 768px) {
-  .opening-img {
+  .opening-img{
     font-size: 3em;
   }
   .offer-container {
-    width: 80%;
-  }
-  .first-offer::before, .third-offer::before, .second-offer::before {
-    display: none;
+    width: 50%;
   }
   .offer-header-item {
     font-size: 1.8em;
@@ -242,5 +332,15 @@ font-family: 'Varela Round', sans-serif;
   }
   .login-button {
     padding: 20px 30px;
+  }
+}
+
+@media (max-width: 610px) {
+  .first-offer::before, .third-offer::before, .second-offer::before {
+    display: none;
+  }
+
+  .offer-container {
+    width: 70%;
   }
 }
