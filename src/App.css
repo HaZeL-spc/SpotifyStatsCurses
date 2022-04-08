@@ -1,38 +1,346 @@
-.App {
-  text-align: center;
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-page-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+.opening-img-container {
+  width: 100%;
+  height: 80vh;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.opening-img {
+  height: 100%;
+  
+  background-image: url("./photo/green-background.png");
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+
+
+  font-family: 'Anton', sans-serif;
+
   color: white;
+  font-size: 6em;
+  text-align: center;
+  text-shadow: 0px 0px 3px black;
 }
 
-.App-link {
-  color: #61dafb;
+.countries-work {
+  height: 20px;
+  width:30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.offer-container {
+  padding-top:50px;
+  width: 62%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.offer-header {
+  font-family: 'Anton', sans-serif;
+font-family: 'Varela Round', sans-serif;
+  text-align: center;
+  color: black;
+  font-size: 4em;
+  padding-bottom: 50px;
+  text-decoration: underline;
+}
+
+.offers-wrapper {
+  display: grid;
+
+  grid-template-rows:    repeat(3, 300px);
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 50px;
+  padding-bottom: 100px;
+}
+
+.first-offer, .second-offer, .third-offer {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.first-offer {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.second-offer {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.third-offer {
+  grid-row:3;
+  grid-column: 1;
+}
+
+.second-offer-photos, .third-offer-photos, .first-offer-photos {
+  position: relative;
+  filter: opacity(0%);
+  transition: all 1s ease-in
+}
+
+.first-offer-photos {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.second-offer-photos {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.third-offer-photos {
+  grid-row:3;
+  grid-column: 2;
+}
+
+.pic1, .pic2, .pic3, .pic4 {
+  position:absolute;
+  border-radius: 10px;
+  border: solid 2px;
+  filter: grayscale(20%);
+
+  height: 90px;
+  width: 90px;
+
+  background-position: center;
+  background-size: cover;
+}
+
+.first-offer-photos .pic1, .first-offer-photos .pic2, .first-offer-photos .pic3, .first-offer-photos .pic4 {
+  display: none;
+}
+
+.second-offer-photos .pic1 {
+  left: calc(100% - 120px);
+  top: 20px;
+  background-image: url("./photo/ArianaGrande.PNG");
+}
+
+.second-offer-photos .pic2 {
+  left: calc(100% - 100px);
+  top: 120px;
+  background-image: url("./photo/DawidPodsiadlo.PNG");
+}
+
+.second-offer-photos .pic3 {
+  left: calc(100% - 220px);
+  top: 20px;
+  background-image: url("./photo/DuaLipa.PNG");
+}
+
+.second-offer-photos .pic4 {
+  left: calc(100% - 200px);
+  top: 120px;
+  background-image: url("./photo/JustinBieber.PNG");
+}
+
+.third-offer-photos .pic1 {
+  left: 70px;
+  top: 20px;
+  background-image: url("./photo/=EdSheeran.PNG");
+}
+
+.third-offer-photos .pic2 {
+  left: 50px;
+  top: 120px;
+  background-image: url("./photo/Adele30.PNG");
+}
+
+.third-offer-photos .pic3 {
+  left: 170px;
+  top: 20px;
+  background-image: url("./photo/SourOliviaRodrigo.PNG");
+}
+
+.third-offer-photos .pic4 {
+  left: 150px;
+  top: 120px;
+  background-image: url("./photo/VoyageAbba.PNG");
+}
+
+
+.first-offer::before, .third-offer::before, .second-offer::before {
+  content: '';
+  position: absolute;
+  top:60px;
+  border-radius: 10px;
+  border: solid 2px;
+
+  height: 90px;
+  width: 90px;
+  filter: grayscale(20%);
+
+  background-position: center;
+  background-size: cover;
+}
+
+.first-offer::before {
+  left:-120px;
+  transform:rotate(330deg);
+
+  background-image: url("./photo/wykres.PNG");
+}
+
+.second-offer:before {
+  left:calc(100% + 60px);
+  transform:rotate(30deg);
+
+  background-image: url("./photo/edSheeran.PNG");
+}
+
+.third-offer:before {
+  left:-120px;
+  transform:rotate(330deg);
+
+  background-image: url("./photo/album.PNG");
+}
+
+
+.first-offer, .second-offer, .third-offer {
+  /* visibility: hidden; */
+  filter: opacity(0%);
+  transition: all 1s ease-in
+}
+
+
+.offer-header-item {
+  font-size: 3em;
+  font-family: 'Anton', sans-serif;
+font-family: 'Varela Round', sans-serif;
+  margin-left: 10px;
+  /* display: flex; */
+  padding-bottom: 0px;
+}
+
+.offer-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.offer-description {
+  padding-top: 30px;
+  font-family: 'Anton', sans-serif;
+  font-family: 'Varela Round', sans-serif;
+  text-align: center;
+  filter: opacity(0%);
+  transition: all 1s ease-in;
+}
+
+.login-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.login-button {
+  background-color: #1DB954;
+  padding: 20px 50px;
+  border-radius: 10px;
+  font-family: 'Anton', sans-serif;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 30px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .opening-img{
+    font-size: 5em;
   }
-  to {
-    transform: rotate(360deg);
+  .offers-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .first-offer {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  .second-offer {
+    grid-row: 2;
+    grid-column: 1;
+  }
+  .third-offer {
+    grid-row: 3;
+    grid-column: 1;
+  }
+  .first-offer-photos, .second-offer-photos, .third-offer-photos {
+    display: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .offers-wrapper {
+    padding-bottom: 40px;
+  }
+  .offer-header-item {
+    font-size: 2.7em;
+  }
+  .offer-header {
+    font-size: 3em;
+  }
+
+  .offer-container {
+    width: 50%;
+  }
+  .first-offer::before, .third-offer::before, .second-offer::before {
+  
+    height: 70px;
+    width: 70px;
+  }
+
+  .login-button {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .opening-img{
+    font-size: 3em;
+  }
+  .offer-container {
+    width: 50%;
+  }
+  .offer-header-item {
+    font-size: 1.8em;
+  }
+  .offer-header {
+    font-size: 2.2em;
+  }
+  .login-button {
+    padding: 20px 30px;
+  }
+}
+
+@media (max-width: 610px) {
+  .first-offer::before, .third-offer::before, .second-offer::before {
+    display: none;
+  }
+
+  .offer-container {
+    width: 70%;
   }
 }
