@@ -1,0 +1,165 @@
+.navbar-container {
+  background-color: black;
+  height: 100px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.navbar-container .navbar-site {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 80%;
+}
+
+.navbar-container .navbar-site li {
+  font-family: 'Anton', sans-serif;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 3em;
+  list-style: none;
+  color: white;
+  position: relative;
+  cursor: pointer;
+}
+
+.navbar-container .navbar-site li::after {
+  content: '';
+  position: absolute;
+  top: 60px;
+  left: 0px;
+  border-radius: 3px;
+  border: solid 2px #1DB954;
+  height: 2px;
+  background-color: #1DB954;
+  width: 100%;
+  display: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.navbar-container .navbar-site li.active::after {
+  display: block;
+}
+
+.navbar-container .navbar-site li.hover::after {
+  display: block;
+  background-color: #1DB954;
+  -webkit-filter: opacity(30%);
+          filter: opacity(30%);
+}
+
+.your-top-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.your-top-container .top-artist-container {
+  width: 80%;
+  height: 200px;
+  margin-top: 50px;
+  border: 5px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.your-top-container .top-artist-container .card-artist-info {
+  -webkit-box-flex: 75%;
+      -ms-flex: 75%;
+          flex: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.your-top-container .top-artist-container .card-artist-info h3 {
+  font-family: 'Anton', sans-serif;
+  font-family: 'Varela Round', sans-serif;
+  text-align: center;
+  font-size: 2.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 90%;
+      -ms-flex: 90%;
+          flex: 90%;
+}
+
+.your-top-container .top-artist-container .card-artist-info h5 {
+  font-family: 'Anton', sans-serif;
+  font-family: 'Varela Round', sans-serif;
+  text-align: center;
+  font-size: 0.7em;
+  -webkit-box-flex: 10%;
+      -ms-flex: 10%;
+          flex: 10%;
+}
+
+.your-top-container .top-artist-container:hover {
+  width: 82%;
+  background: #1DB954;
+  color: white;
+}
+
+@media (max-width: 992px) {
+  .navbar-container .navbar-site li {
+    font-size: 2.7em;
+  }
+}
+/*# sourceMappingURL=TopStats.css.map */

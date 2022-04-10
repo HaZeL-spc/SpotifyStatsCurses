@@ -12,10 +12,12 @@ const getLyricsGenius = (artistName, album, song) => {
     optimizeQuery: true,
   };
 
-  if (artistName === "Miętha" && album["name"] === "36,6")
+  if (artistName === "Miętha") {
+    console.log("dwaonda");
     getLyrics(options).then((lyrics) => {
       song["lyrics"] = lyrics;
     });
+  }
 };
 
 export { getLyricsGenius };

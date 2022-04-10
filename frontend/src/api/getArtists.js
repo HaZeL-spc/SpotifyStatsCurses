@@ -2,7 +2,7 @@ import { ARTISTS_ENDPOINT, HOWMANYARTISTS } from "../Information";
 import axios from "axios";
 import { getAlbums } from "./getAlbums";
 
-const getArtists = async (token) => {
+const getArtists = async (token, setData) => {
   console.log(token);
   if (token) {
     //get information about artists
@@ -24,10 +24,10 @@ const getArtists = async (token) => {
           newArtist["images"] = response.data.items[i].images;
           newArtist["id"] = newArtist["url"].split("/")[4];
 
-          getAlbums(newArtist, token);
+          //getAlbums(newArtist, token);
           newArtists.push(newArtist);
         }
-        console.log(newArtists);
+        setData(newArtists);
         // setArtists(newArtists, token);
       })
       .catch((error) => {

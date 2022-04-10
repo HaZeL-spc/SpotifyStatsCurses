@@ -1,0 +1,127 @@
+$spotify-green: #1DB954;
+
+.navbar-container {
+  background-color: black;
+  height: 100px;
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & .navbar-site {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 80%;
+
+    & li {
+      font-family: 'Anton', sans-serif;
+      font-family: 'Varela Round', sans-serif;
+  
+      font-size: 3em;
+      list-style: none;
+      color: white;
+      position: relative;
+      cursor: pointer;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top:60px;
+        left: 0px;
+        border-radius: 3px;
+        border: solid 2px #1DB954;
+      
+        height: 2px;
+        background-color: #1DB954;
+        width: 100%;
+        display: none;
+
+        transition: all 0.2s ease;
+      }
+
+      &.active {
+        &::after {
+          display: block;
+        }
+      }
+
+      &.hover {
+        &::after {
+          display: block;
+          background-color: #1DB954;
+          filter: opacity(30%);
+        }
+      }
+    }
+  }
+}
+
+.your-top-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  & .top-artist-container {
+    width: 80%;
+    height: 200px;
+    margin-top: 50px;
+    border: 5px solid black;
+
+    display: flex;
+    flex-direction: row;
+    
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    & .card-artist-info {
+      flex: 75%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      h3 {
+        font-family: 'Anton', sans-serif;
+        font-family: 'Varela Round', sans-serif;
+        text-align: center;
+        font-size: 2.5em;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        flex-direction: column;
+        flex: 90%;
+
+        // transition: all 0.2s ease;
+      }
+
+      h5 {
+        font-family: 'Anton', sans-serif;
+        font-family: 'Varela Round', sans-serif;
+        text-align: center;
+        font-size: 0.7em;
+        flex: 10%;
+      }
+    }
+  }
+  & .top-artist-container:hover {
+    width: 82%;
+
+    background: $spotify-green;
+    color: white
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar-container {
+    & .navbar-site {
+      & li {
+        font-size: 2.7em;
+      }
+    }
+  }
+}

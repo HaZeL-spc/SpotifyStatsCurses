@@ -49,7 +49,7 @@ const MainPage = ({ token, setToken }) => {
     //let newArtists = getArtists(token);
     //console.log(newArtists);
     changeToken();
-  }, [token]);
+  }, []);
 
   return (
     <div className="main-page-container">

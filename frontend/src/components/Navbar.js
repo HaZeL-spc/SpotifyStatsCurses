@@ -1,26 +1,32 @@
 import React, { createRef } from "react";
+import "../App.css";
 import "../TopStats.css";
 
-const Navbar = () => {
+const Navbar = ({ setCurrentPage }) => {
   const ulRef = createRef();
 
   const changeActiveLi = (e) => {
     for (let i = 0; i < ulRef.current.children.length; i++) {
-      ulRef.current.children[i].className = "";
+      ulRef.current.children[i].classList.remove("active");
     }
-    e.target.className = "active";
-    console.log(ulRef.current.children);
+
+    if (e.target.classList.contains("hover")) {
+      e.target.classList.remove("hover");
+    }
+    setCurrentPage(e.target.className);
+    e.target.classList.add("active");
+    //console.log(ulRef.current.children);
   };
 
   const onHoverLi = (e) => {
-    if (e.target.className !== "active") {
-      e.target.className = "hover";
+    if (!e.target.classList.contains("active")) {
+      e.target.classList.add("hover");
     }
   };
 
   const onHoverLeaveLi = (e) => {
-    if (e.target.className === "hover") {
-      e.target.className = "";
+    if (e.target.classList.contains("hover")) {
+      e.target.classList.remove("hover");
     }
   };
 
@@ -28,7 +34,7 @@ const Navbar = () => {
     <div className="navbar-container">
       <ul className="navbar-site" ref={ulRef}>
         <li
-          className="active"
+          className="your-top active"
           onClick={(e) => changeActiveLi(e)}
           onMouseEnter={(e) => onHoverLi(e)}
           onMouseLeave={(e) => onHoverLeaveLi(e)}
@@ -36,6 +42,7 @@ const Navbar = () => {
           Your Top
         </li>
         <li
+          className="artists"
           onClick={(e) => changeActiveLi(e)}
           onMouseEnter={(e) => onHoverLi(e)}
           onMouseLeave={(e) => onHoverLeaveLi(e)}
@@ -43,11 +50,12 @@ const Navbar = () => {
           Artists
         </li>
         <li
+          className="albums"
           onClick={(e) => changeActiveLi(e)}
           onMouseEnter={(e) => onHoverLi(e)}
           onMouseLeave={(e) => onHoverLeaveLi(e)}
         >
-          Album
+          Albums
         </li>
       </ul>
     </div>

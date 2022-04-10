@@ -5,6 +5,10 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  overflow: scroll
+}
+
 .main-page-container {
   width: 100%;
   display: flex;
@@ -184,6 +188,7 @@ font-family: 'Varela Round', sans-serif;
   content: '';
   position: absolute;
   top:60px;
+  left:-5px;
   border-radius: 10px;
   border: solid 2px;
 

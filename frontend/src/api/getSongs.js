@@ -21,7 +21,7 @@ const getSongs = (album, token, artistName) => {
         song["href"] = data[k].href;
         song["track_number"] = data[k].track_number;
 
-        getLyricsGenius(artistName, album, song);
+        //getLyricsGenius(artistName, album, song);
         songs.push(song);
       }
       album["songs"] = songs;
