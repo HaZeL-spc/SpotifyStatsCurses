@@ -58,6 +58,186 @@ $spotify-green: #1DB954;
   }
 }
 
+.page-navbar-md,
+.page-navbar {
+  position: fixed;
+  top: 0px;
+  height: 70px;
+  background-color: transparent;
+  color: white;
+
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0px auto 0px auto;
+}
+.page-navbar-md {
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0%;
+    height: 0px;
+    width: 100%;
+    background-color: black;
+  }
+
+  & .page-navbar-holder-md {
+    width: 90%;
+    margin: 0px auto 0px auto;
+    display: flex;
+    justify-content: space-between;
+    z-index: 700;
+  }
+
+  & .navbar-logo {
+    display: flex;
+    align-items: center;
+    width: 500px;
+    transition: width 1s ease-in;
+
+    & .logo-text {
+      font-size: 50px;
+      margin: 0px;
+      padding: 0px;
+    }
+  }
+}
+
+.page-navbar {
+  & .page-navbar-holder {
+    width: 90%;
+    margin: 0px auto 0px auto;
+    display: flex;
+    justify-content: space-between;
+    z-index: 700;
+  }
+
+  & .navbar-logo {
+    display: flex;
+    align-items: center;
+    margin-left: 0px;
+
+    transition: margin-left 0.5s ease-in;
+
+    & .logo-text {
+      font-size: 50px;
+      margin: 0px;
+      padding: 0px;
+    }
+  }
+}
+
+.navbar-menu {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.falling-nav {
+  // display: none;
+  top: 70px;
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 0px;
+  background-color: black;
+  z-index: 800;
+
+  transition: height 0.5s ease-in;
+
+  & ul {
+    list-style: none;
+    margin: 0px auto 0px auto;
+    width: 90%;
+  }
+
+  & li {
+    cursor: pointer;
+    font-size: 40px;
+    background-color: black;
+    transition: background-color 0.2s ease-in;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+
+.change .falling-nav {
+  height: 200px;
+}
+
+.bar-container {
+  display: inline-block;
+  cursor: pointer;
+
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0px;
+    transition: 0.4s;
+    border-radius: 10px;
+  }
+}
+
+.change {
+  & .bar1 {
+    transform: rotate(-45deg) translate(-7px, 6px);
+  }
+  & .bar2 {
+    opacity: 0;
+  }
+  & .bar3 {
+    transform: rotate(45deg) translate(-9px, -8px);
+  }
+}
+
+.unscrolled,
+.scrolled {
+  & .navbar-menu-md {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    li {
+      height: 100%;
+      font-size: 30px;
+      list-style: none;
+      margin-left: 40px;
+      padding: 10px;
+
+      transition: 0.2s;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.unscrolled {
+  li {
+    &:hover {
+      color: rgb(225, 240, 21);
+      // background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+.scrolled {
+  li {
+    &:hover {
+      // color: yellow;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+
 .your-top-container {
   display: flex;
   justify-content: center;
@@ -121,6 +301,22 @@ $spotify-green: #1DB954;
     & .navbar-site {
       & li {
         font-size: 2.7em;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    & .navbar-site {
+      & li {
+        font-size: 2.3em;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top:50px;
+        }
       }
     }
   }

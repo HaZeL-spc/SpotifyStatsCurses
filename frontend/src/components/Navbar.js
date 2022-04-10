@@ -1,9 +1,11 @@
-import React, { createRef } from "react";
+import React, { createRef, useState, useEffect } from "react";
 import "../App.css";
 import "../TopStats.css";
+import NavbarMD from "./NavbarMD";
 
 const Navbar = ({ setCurrentPage }) => {
   const ulRef = createRef();
+  const [mdNavbar, setMDNavbar] = useState();
 
   const changeActiveLi = (e) => {
     for (let i = 0; i < ulRef.current.children.length; i++) {
@@ -30,36 +32,62 @@ const Navbar = ({ setCurrentPage }) => {
     }
   };
 
-  return (
-    <div className="navbar-container">
-      <ul className="navbar-site" ref={ulRef}>
-        <li
-          className="your-top active"
-          onClick={(e) => changeActiveLi(e)}
-          onMouseEnter={(e) => onHoverLi(e)}
-          onMouseLeave={(e) => onHoverLeaveLi(e)}
-        >
-          Your Top
-        </li>
-        <li
-          className="artists"
-          onClick={(e) => changeActiveLi(e)}
-          onMouseEnter={(e) => onHoverLi(e)}
-          onMouseLeave={(e) => onHoverLeaveLi(e)}
-        >
-          Artists
-        </li>
-        <li
-          className="albums"
-          onClick={(e) => changeActiveLi(e)}
-          onMouseEnter={(e) => onHoverLi(e)}
-          onMouseLeave={(e) => onHoverLeaveLi(e)}
-        >
-          Albums
-        </li>
-      </ul>
-    </div>
-  );
+  //change if another nav
+  const changeTypeNav = () => {
+    const nav = document.querySelector(".navbar-site");
+    if (window.innerWidth >= 600) {
+      nav.style.backgroundColor = "transparent";
+      setMDNavbar(true);
+    } else {
+      nav.style.backgroundColor = "black";
+      nav.classList.add("scrolled");
+      nav.classList.remove("unscrolled");
+      setMDNavbar(false);
+    }
+  };
+
+  useEffect(() => {
+    changeTypeNav();
+    window.addEventListener("resize", changeTypeNav);
+
+    return () => {
+      window.removeEventListener("resize", changeTypeNav);
+    };
+  }, [mdNavbar]);
+
+  if (mdNavbar) {
+    return (
+      <div className="navbar-container">
+        <ul className="navbar-site" ref={ulRef}>
+          <li
+            className="your-top active"
+            onClick={(e) => changeActiveLi(e)}
+            onMouseEnter={(e) => onHoverLi(e)}
+            onMouseLeave={(e) => onHoverLeaveLi(e)}
+          >
+            Your Top
+          </li>
+          <li
+            className="artists"
+            onClick={(e) => changeActiveLi(e)}
+            onMouseEnter={(e) => onHoverLi(e)}
+            onMouseLeave={(e) => onHoverLeaveLi(e)}
+          >
+            Artists
+          </li>
+          <li
+            className="albums"
+            onClick={(e) => changeActiveLi(e)}
+            onMouseEnter={(e) => onHoverLi(e)}
+            onMouseLeave={(e) => onHoverLeaveLi(e)}
+          >
+            Albums
+          </li>
+        </ul>
+      </div>
+    );
+  }
+  return <NavbarMD />;
 };
 
 export default Navbar;
