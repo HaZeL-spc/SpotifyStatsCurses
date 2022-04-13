@@ -51,6 +51,8 @@ const MainPage = ({ token, setToken }) => {
     changeToken();
   }, []);
 
+  console.log(token);
+
   return (
     <div className="main-page-container">
       <div className="opening-img-container">

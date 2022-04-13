@@ -12,7 +12,6 @@ const Card = styled.div`
 `;
 
 const ArtistsCard = ({ element, setChoosed }) => {
-  console.log(element);
   return (
     <div
       className="top-artist-container"

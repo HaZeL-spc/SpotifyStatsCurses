@@ -2,7 +2,7 @@ import { ALBUMS_ENDPOINT } from "../Information";
 import axios from "axios";
 import { getSongs } from "./getSongs";
 
-const getAlbums = (newArtist, token) => {
+const getAlbums = async (newArtist, token, setAlbumData) => {
   var albums = [];
   // get information about albums
   axios
@@ -27,7 +27,8 @@ const getAlbums = (newArtist, token) => {
         } else break;
         albums.push(album);
       }
-      newArtist["albums"] = albums;
+      //newArtist["albums"] = albums;
+      setAlbumData(albums);
     })
     .catch((error) => console.log(error));
   return albums;

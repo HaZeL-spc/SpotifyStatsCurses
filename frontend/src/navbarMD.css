@@ -119,8 +119,17 @@
   cursor: pointer;
   font-size: 40px;
   background-color: black;
-  -webkit-transition: none;
-  transition: none;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  border-bottom: 2px solid gray;
+}
+
+.falling-nav li a {
+  color: white;
+}
+
+.falling-nav li:hover {
+  background-color: #1DB954;
 }
 
 .change .falling-nav {
@@ -187,6 +196,11 @@
 .unscrolled .navbar-menu-md li:hover,
 .scrolled .navbar-menu-md li:hover {
   cursor: pointer;
+}
+
+.a-nav-element {
+  text-decoration: none;
+  color: white;
 }
 
 .unscrolled li:hover {

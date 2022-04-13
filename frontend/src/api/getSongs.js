@@ -2,7 +2,7 @@ import { SONGS_ENDPOINT } from "../Information";
 import axios from "axios";
 import { getLyricsGenius } from "./getLyricsGenius";
 
-const getSongs = (album, token, artistName) => {
+const getSongs = async (album, token, artistName) => {
   // get information about songs on album
   var songs = [];
   axios

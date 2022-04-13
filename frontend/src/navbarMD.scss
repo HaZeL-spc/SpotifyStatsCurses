@@ -1,3 +1,5 @@
+$spotify-green: #1DB954;
+
 .page-navbar-md,
 .page-navbar {
   position: fixed;
@@ -98,7 +100,17 @@
     cursor: pointer;
     font-size: 40px;
     background-color: black;
-    transition: none;
+    transition: all 0.2s ;
+
+    border-bottom: 2px solid gray;
+
+    & a {
+      color: white;
+
+    }
+    &:hover {
+      background-color: $spotify-green;
+    }
   }
 }
 
@@ -159,6 +171,12 @@
       }
     }
   }
+}
+
+.a-nav-element {
+  text-decoration: none;
+  color: white
+
 }
 
 .unscrolled {

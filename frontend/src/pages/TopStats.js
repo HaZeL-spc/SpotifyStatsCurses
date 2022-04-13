@@ -16,12 +16,12 @@ const TopStats = ({ token, setToken, data }) => {
     setToken("");
   };
 
-  // console.log(currentPage);
+  console.log(currentPage);
   return (
     <div className="top-stats-container">
-      <Navbar setCurrentPage={setCurrentPage} />
+      <Navbar setCurrentPage={setCurrentPage} currentPage={currentPage} />
       {currentPage === "your-top" ? (
-        <YourTop data={data} />
+        <YourTop data={data} token={token} />
       ) : currentPage === "artists" ? (
         <Artists />
       ) : (

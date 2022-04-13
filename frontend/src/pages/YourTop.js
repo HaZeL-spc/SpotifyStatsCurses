@@ -5,7 +5,7 @@ import { ThemeProvider } from "styled-components";
 import { useState } from "react";
 import InfoArtist from "./InfoArtist";
 
-const YourTop = ({ data }) => {
+const YourTop = ({ data, token }) => {
   const [choosed, setChoosed] = useState("");
 
   return (
@@ -22,7 +22,9 @@ const YourTop = ({ data }) => {
           ))
         : data.map((element) => {
             if (element.name === choosed) {
-              return <InfoArtist element={element} />;
+              return (
+                <InfoArtist key={element.url} element={element} token={token} />
+              );
             }
           })}
     </div>

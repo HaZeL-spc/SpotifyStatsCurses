@@ -3,7 +3,7 @@ import "../App.css";
 import "../TopStats.css";
 import NavbarMD from "./NavbarMD";
 
-const Navbar = ({ setCurrentPage }) => {
+const Navbar = ({ setCurrentPage, currentPage }) => {
   const ulRef = createRef();
   const [mdNavbar, setMDNavbar] = useState();
 
@@ -87,7 +87,7 @@ const Navbar = ({ setCurrentPage }) => {
       </div>
     );
   }
-  return <NavbarMD />;
+  return <NavbarMD setCurrentPage={setCurrentPage} />;
 };
 
 export default Navbar;
