@@ -9,7 +9,7 @@ const getArtists = async (token, setData) => {
     var newArtists = [];
     console.log(token);
 
-    axios
+    await axios
       .get(ARTISTS_ENDPOINT, {
         headers: {
           Authorization: "Bearer " + token,

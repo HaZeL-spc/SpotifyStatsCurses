@@ -11,12 +11,7 @@ function App() {
 
   useEffect(() => {
     getArtists(token, setData);
-    axios.get("http://127.0.0.1:8000/api/lyrics").then((res) => {
-      console.log(res);
-    });
   }, [token]);
-
-  console.log(data);
 
   return (
     <div className="App">

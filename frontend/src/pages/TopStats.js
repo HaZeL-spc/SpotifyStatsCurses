@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import "../TopStats.css";
 import Albums from "./Albums";
@@ -16,7 +17,7 @@ const TopStats = ({ token, setToken, data }) => {
     setToken("");
   };
 
-  console.log(currentPage);
+  // console.log(currentPage);
   return (
     <div className="top-stats-container">
       <Navbar setCurrentPage={setCurrentPage} currentPage={currentPage} />

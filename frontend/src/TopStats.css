@@ -157,6 +157,111 @@
   color: white;
 }
 
+.info-artist-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.info-artist-container .info-artist-name-header {
+  width: 100%;
+  font-size: 3em;
+  font-family: 'Anton', sans-serif;
+  font-family: 'Varela Round', sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+.info-artist-container .info-artist-stats-how-many {
+  margin-top: 50px;
+  width: 100%;
+  height: 100px;
+}
+
+.info-artist-container .info-artist-stats-how-many h2 {
+  font-family: 'Anton', sans-serif;
+  font-family: 'Varela Round', sans-serif;
+  text-align: center;
+  font-size: 2em;
+}
+
+.info-artist-container .info-artist-stats-how-many h1 {
+  font-family: 'Anton', sans-serif;
+  font-family: 'Varela Round', sans-serif;
+  text-align: center;
+  font-size: 6em;
+}
+
+.info-artist-stats {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: auto;
+  min-height: 500px;
+}
+
+.info-artist-stats .info-artist-albums {
+  -webkit-box-flex: 40%;
+      -ms-flex: 40%;
+          flex: 40%;
+}
+
+.info-artist-stats .info-artist-albums .info-artists-album-show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  border-bottom: 5px solid black;
+  height: 80px;
+}
+
+.info-artist-stats .info-artist-albums .info-artists-album-show .info-artists-album-image {
+  -webkit-box-flex: 25%;
+      -ms-flex: 25%;
+          flex: 25%;
+  background-position: center;
+  background-size: cover;
+}
+
+.info-artist-stats .info-artist-albums .info-artists-album-show .info-artist-album-name {
+  -webkit-box-flex: 75%;
+      -ms-flex: 75%;
+          flex: 75%;
+  font-size: 1.5em;
+  margin: auto;
+}
+
+.info-artist-stats .info-artist-space-between {
+  -webkit-box-flex: 10%;
+      -ms-flex: 10%;
+          flex: 10%;
+  background-color: white;
+  background-image: none;
+}
+
+.info-artist-stats .info-artist-image {
+  -webkit-box-flex: 40%;
+      -ms-flex: 40%;
+          flex: 40%;
+  background: purple;
+  background-position: center;
+  background-size: cover;
+  border: 5px solid black;
+}
+
 @media (max-width: 992px) {
   .navbar-container .navbar-site li {
     font-size: 2.7em;

@@ -6,7 +6,7 @@ from django.urls import path, include
 
 
 urlpatterns = [
-    path("lyrics", views.Lyrics.as_view(), name="lyrics"),
+    path("artist/<str:id>/<str:token>", views.ArtistView.as_view(), name="artist"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
